@@ -18,6 +18,8 @@ export const Map = ({ businesses = [], center, zoom = 13 }: MapProps) => {
     (businesses.length > 0 
       ? businesses[0].coordinates 
       : { lat: -33.4489, lng: -70.6693 });
+      
+  const mapCenter = selectedBusiness?.coordinates || defaultCenter;
   
   const handleMarkerClick = useCallback((business: Business) => {
     selectBusiness(business);
@@ -28,7 +30,7 @@ export const Map = ({ businesses = [], center, zoom = 13 }: MapProps) => {
           <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_KEY}>
               <GoogleMap
                 mapContainerStyle={containerStyle}
-                center={defaultCenter}
+                center={mapCenter}
                 zoom={zoom}
               >
                   {businesses.map((business) => (
