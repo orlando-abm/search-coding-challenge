@@ -35,7 +35,7 @@ export const businesses: Business[] = [
     address: 'Av. El Bosque Norte 0123, Las Condes, Santiago',
     coordinates: { lat: -33.4111, lng: -70.5981 },
     openingHours: 'Lun-Sáb: 8:00-21:00',
-    image: 'https://images.unsplash.com/photo-1569429599511-6b37b2ac8a06?auto=format&fit=crop&w=500&q=60'
+    image: 'https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?auto=format&fit=crop&w=500&q=60'
   },
   {
     id: '5',
@@ -100,7 +100,7 @@ export const businesses: Business[] = [
     address: 'Av. Irarrázaval 1820, Ñuñoa, Santiago',
     coordinates: { lat: -33.4563, lng: -70.6201 },
     openingHours: 'Lun-Dom: 8:30-22:00',
-    image: 'https://images.unsplash.com/photo-1526897520093-6a05b0b01e3b?auto=format&fit=crop&w=500&q=60'
+    image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=500&q=60'
   },
   {
     id: '12',
