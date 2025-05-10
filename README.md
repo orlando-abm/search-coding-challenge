@@ -8,17 +8,17 @@ Desarrollar una aplicación web que permita a los usuarios buscar y visualizar c
 
 ### Interfaz de Usuario (UI)
 
-- Crear una barra de búsqueda donde los usuarios puedan ingresar el nombre o tipo de comercio.
-- Mostrar una lista de resultados de búsqueda debajo de la barra de búsqueda.
-- Integrar un mapa interactivo que muestre la ubicación de los comercios.
+- ✅ Crear una barra de búsqueda donde los usuarios puedan ingresar el nombre o tipo de comercio.
+- ✅ Mostrar una lista de resultados de búsqueda debajo de la barra de búsqueda.
+- ✅ Integrar un mapa interactivo que muestre la ubicación de los comercios.
 
 ### Funcionalidad de Búsqueda
 
-- Permitir al usuario hacer clic en un marcador para ver más detalles sobre el comercio.
+- ✅ Permitir al usuario hacer clic en un marcador para ver más detalles sobre el comercio.
 
 ### Detalles del Comercio
 
-- Mostrar información detallada del comercio seleccionado, como nombre, dirección, horario de atención y una imagen.
+- ✅ Mostrar información detallada del comercio seleccionado, como nombre, dirección, horario de atención y una imagen.
 
 ## Entregables
 
@@ -36,4 +36,126 @@ Desarrollar una aplicación web que permita a los usuarios buscar y visualizar c
 - Los datos de los comercios se obtienen desde un mock.
 - No se implementó backend ni base de datos para simplificar el desarrollo.
 - Los tipos de comercio estarán limitados a categorías ficticias como: supermercado, café, restaurante y farmacia, representando los rubros más comunes.
+- No se considera la localización del usuario, por lo que se muestra el mapa desde la ubicación de la primera búsqueda.
 
+
+## Arquitectura del Proyecto
+
+El proyecto sigue una arquitectura modular basada en componentes, con una clara separación de responsabilidades. La estructura del proyecto se organiza de la siguiente manera:
+
+```
+src/
+├── assets/            # Recursos estáticos como imágenes, iconos, etc.
+├── components/        # Componentes reutilizables de React
+├── config/            # Configuraciones globales de la aplicación
+├── mocks/             # Configuración de Mock Service Worker
+│   ├── data/          # Datos mock para simular respuestas de API
+│   ├── handlers/      # Manejadores de peticiones HTTP mock
+│   └── interfaces/    # Interfaces TypeScript para los datos mock
+└── shared/            # Código compartido entre diferentes partes de la aplicación
+    ├── constants/     # Constantes utilizadas en toda la aplicación
+    ├── context/       # Contextos de React para estado global
+    ├── hooks/         # Hooks personalizados de React
+    └── services/      # Servicios para interactuar con APIs externas
+```
+
+Esta arquitectura permite:
+
+- **Modularidad**: Cada componente tiene una responsabilidad única y bien definida.
+- **Reutilización**: Los componentes, hooks y servicios pueden ser reutilizados en diferentes partes de la aplicación.
+- **Mantenibilidad**: La separación clara de responsabilidades facilita el mantenimiento y la evolución del código.
+- **Testabilidad**: La estructura modular facilita la escritura de pruebas unitarias y de integración.
+
+### Patrones de Diseño Utilizados
+
+- **Context API**: Para gestionar el estado global de la aplicación, como el negocio seleccionado.
+- **Custom Hooks**: Para encapsular lógica reutilizable, como la búsqueda de negocios.
+- **Mocks**: Para simular una API durante el desarrollo, permitiendo trabajar sin dependencias externas.
+
+## Tecnologías Utilizadas
+
+- React
+- Mock Service Worker
+- Vite
+- Tailwind CSS
+- React Google Maps Api
+- React Query
+- TypeScript
+- Lucide React
+- ESLint
+
+
+## Requisitos Previos
+
+- [Node.js](https://nodejs.org/): `v22.12.0`  
+    Recomendamos usar **NVM** (Node Version Manager) para manejar múltiples versiones de Node.js en tu sistema.  
+
+    **Usando NVMM**:
+
+    Si tienes **NVM** instalado, puedes asegurarte de estar usando la versión correcta de Node.js especificada en el archivo `.nvmrc` del proyecto. Simplemente ejecuta:  
+
+    ```bash
+    nvm use
+    ```
+
+    Si no tienes NVM instalado, puedes hacerlo siguiendo las instrucciones de su [repositorio oficial](https://github.com/nvm-sh/nvm).
+
+- [pnpm](https://pnpm.io/): Asegúrate de tener pnpm instalado globalmente. Puedes hacerlo con el siguiente comando:
+
+    ```bash
+    npm install -g pnpm
+    ```
+
+## Instalación y Ejecución del Proyecto
+
+Pasos para instalar las dependencias y preparar el proyecto.
+
+1. Clonar el Repositorio
+    Clona el repositorio en tu máquina local usando el siguiente comando:
+
+    ```bash
+    git clone git@github.com:orlando-abm/search-coding-challenge.git
+    ```
+
+2. Instala las dependencias:
+    Una vez que hayas clonado el repositorio, navega al directorio del proyecto y asegúrate de estar usando la versión correcta de Node.js, una vez que estés en el directorio del proyecto, ejecuta el siguiente comando:
+
+    ```bash
+    nvm use
+    ```
+
+    **Nota**: El comando nvm use asegurará que estés usando la versión de Node.js especificada en el archivo .nvmrc. Si no tienes NVM instalado, puedes hacerlo siguiendo las instrucciones de su [repositorio oficial](https://github.com/nvm-sh/nvm).
+
+    Luego, instala las dependencias utilizando pnpm:
+
+    ```bash
+    pnpm install
+    ```
+
+    **Nota**: Si no tienes pnpm instalado, instálalo con el siguiente comando
+
+    ```bash
+    npm install -g pnpm
+    ```
+    
+3. Configuración del Entorno
+    Configura las variables de entorno necesarias para el proyecto. Crea un archivo .env basado en el archivo .env.example:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    A continuación, edita el archivo .env, agregando la API_KEY de Google Maps en GOOGLE_MAPS_KEY y la URL de este proyecto en API_URL, por defecto es http://localhost:5173, en caso de que el proyecto se ejecute en un puerto diferente, debes modificar el valor de API_URL.
+
+4. Ejecución del Proyecto
+    Una vez que hayas configurado las variables de entorno, puedes ejecutar el proyecto con el siguiente comando:
+
+    ```bash
+    pnpm run dev
+    ```
+
+    **Nota**: Si no tienes pnpm instalado, instálalo con el siguiente comando
+
+    ```bash
+    npm install -g pnpm
+    ```
