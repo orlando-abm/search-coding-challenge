@@ -32,6 +32,18 @@ export const Map = ({ businesses = [], center, zoom = 13 }: MapProps) => {
                 mapContainerStyle={containerStyle}
                 center={mapCenter}
                 zoom={zoom}
+                options={{
+                  zoomControl: true,
+                  mapTypeControl: false,
+                  streetViewControl: false,
+                  fullscreenControl: true,
+                  zoomControlOptions: {
+                    position: window.google?.maps?.ControlPosition?.RIGHT_BOTTOM || 11
+                  },
+                  fullscreenControlOptions: {
+                    position: window.google?.maps?.ControlPosition?.LEFT_BOTTOM || 6
+                  }
+                }}
               >
                   {businesses.map((business) => (
                       <div key={business.id}>
