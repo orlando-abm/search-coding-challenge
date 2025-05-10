@@ -38,6 +38,39 @@ Desarrollar una aplicación web que permita a los usuarios buscar y visualizar c
 - Los tipos de comercio estarán limitados a categorías ficticias como: supermercado, café, restaurante y farmacia, representando los rubros más comunes.
 - No se considera la localización del usuario, por lo que se muestra el mapa desde la ubicación de la primera búsqueda.
 
+## Decisiones de Diseño
+
+La interfaz de usuario de la aplicación se diseñó siguiendo un enfoque intuitivo y fácil de usar, inspirado en aplicaciones populares de búsqueda como Google Maps. Las principales decisiones de diseño incluyen:
+
+### Diseño de Escritorio
+
+- **Sidebar con Buscador**: Se implementó un sidebar en el lado izquierdo de la pantalla que contiene el buscador en la parte superior y los resultados de búsqueda debajo, permitiendo a los usuarios ver rápidamente todos los comercios encontrados.
+
+- **Mapa Interactivo**: En el lado derecho de la pantalla se muestra un mapa de Google Maps con marcadores para cada comercio encontrado, ofreciendo una representación visual de las ubicaciones.
+
+- **Tarjetas de Comercios**: Los resultados de búsqueda se muestran como tarjetas con información básica (nombre, dirección, tipo), permitiendo al usuario seleccionar un comercio haciendo clic en la tarjeta.
+
+- **Destacado Visual**: El comercio seleccionado se destaca visualmente tanto en la lista (con un borde de color) como en el mapa (centrando la vista en el marcador).
+
+- **Popover de Información**: Al hacer clic en un marcador del mapa, se muestra un popover con información detallada del comercio, incluyendo nombre, dirección, horarios e imagen, lo que permite al usuario obtener más información sin cambiar de pantalla.
+
+### Diseño Responsive
+
+- **Enfoque Mobile-First**: En dispositivos móviles, se prioriza la visualización del mapa, ocupando toda la pantalla para maximizar la experiencia de navegación.
+
+- **Buscador Flotante**: El buscador se muestra como un elemento flotante en la parte superior de la pantalla, permitiendo realizar búsquedas sin perder de vista el mapa.
+
+- **Interacción Simplificada**: En móviles, para ver la información detallada de un comercio, el usuario debe hacer clic en el marcador correspondiente en el mapa, lo que muestra el popover con toda la información relevante.
+
+- **Controles de Mapa Optimizados**: Los controles del mapa (zoom, pantalla completa) se han posicionado estratégicamente para evitar superposiciones con otros elementos de la interfaz y garantizar su accesibilidad en todos los dispositivos.
+
+Estas decisiones de diseño proporcionan varias ventajas:
+
+- **Usabilidad Mejorada**: La interfaz es intuitiva y fácil de usar tanto en dispositivos de escritorio como móviles.
+- **Experiencia Fluida**: Los usuarios pueden buscar, explorar y obtener información detallada de los comercios sin cambios de página o interrupciones.
+- **Adaptabilidad**: La aplicación se adapta a diferentes tamaños de pantalla, ofreciendo una experiencia óptima en cada dispositivo.
+- **Eficiencia Visual**: La disposición de los elementos maximiza el espacio disponible y presenta la información de manera clara y organizada.
+
 
 ## Arquitectura del Proyecto
 
