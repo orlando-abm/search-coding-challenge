@@ -37,6 +37,7 @@ Desarrollar una aplicación web que permita a los usuarios buscar y visualizar c
 - No se implementó backend ni base de datos para simplificar el desarrollo.
 - Los tipos de comercio estarán limitados a categorías ficticias como: supermercado, café, restaurante y farmacia, representando los rubros más comunes.
 - No se considera la localización del usuario, por lo que se muestra el mapa desde la ubicación de la primera búsqueda.
+- **La aplicación solo funciona en modo desarrollo** ya que Mock Service Worker (MSW) está configurado únicamente para este entorno. Esta decisión se tomó para simplificar el desarrollo y demostración de la aplicación.
 
 ## Decisiones de Diseño
 
@@ -141,7 +142,9 @@ Esta arquitectura permite:
 
 ## Instalación y Ejecución del Proyecto
 
-Pasos para instalar las dependencias y preparar el proyecto.
+Hay dos formas de ejecutar este proyecto: localmente o con Docker.
+
+### Instalación y Ejecución Local
 
 1. Clonar el Repositorio
     Clona el repositorio en tu máquina local usando el siguiente comando:
@@ -187,8 +190,41 @@ Pasos para instalar las dependencias y preparar el proyecto.
     pnpm run dev
     ```
 
-    **Nota**: Si no tienes pnpm instalado, instálalo con el siguiente comando
+### Instalación y Ejecución con Docker
+
+Si prefieres utilizar Docker, puedes seguir estos pasos:
+
+1. Clonar el Repositorio
+    Clona el repositorio en tu máquina local usando el siguiente comando:
 
     ```bash
-    npm install -g pnpm
+    git clone git@github.com:orlando-abm/search-coding-challenge.git
     ```
+
+2. Configuración del Entorno
+    Configura las variables de entorno necesarias para el proyecto. Crea un archivo .env basado en el archivo .env.example:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    A continuación, edita el archivo .env, agregando la API_KEY de Google Maps en GOOGLE_MAPS_KEY y la URL de este proyecto en API_URL, por defecto es http://localhost:5173.
+
+3. Construir y Ejecutar con Docker
+    Construye la imagen de Docker y ejecuta el contenedor con los siguientes comandos:
+
+    ```bash
+    # Construir la imagen
+    docker build -t search-app .
+    
+    # Ejecutar el contenedor
+    docker run -p 5173:5173 --env-file .env search-app
+    ```
+
+    Esto iniciará la aplicación en modo desarrollo y estará disponible en http://localhost:5173.
+
+## Nota Importante: Modo Desarrollo
+
+**Esta aplicación está diseñada para funcionar exclusivamente en modo desarrollo**, ya que utiliza Mock Service Worker (MSW) para simular las respuestas de API. MSW está configurado únicamente para el entorno de desarrollo, lo que permite simular las respuestas del servidor sin necesidad de un backend real.
+
+Esta decisión se tomó para simplificar el desarrollo y demostración de la aplicación, permitiendo que funcione de manera autónoma sin dependencias externas.
