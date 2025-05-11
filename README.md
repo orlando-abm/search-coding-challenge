@@ -117,6 +117,7 @@ Esta arquitectura permite:
 - TypeScript
 - Lucide React
 - ESLint
+- Playwright
 
 
 ## Requisitos Previos
@@ -228,3 +229,41 @@ Si prefieres utilizar Docker, puedes seguir estos pasos:
 **Esta aplicación está diseñada para funcionar exclusivamente en modo desarrollo**, ya que utiliza Mock Service Worker (MSW) para simular las respuestas de API. MSW está configurado únicamente para el entorno de desarrollo, lo que permite simular las respuestas del servidor sin necesidad de un backend real.
 
 Esta decisión se tomó para simplificar el desarrollo y demostración de la aplicación, permitiendo que funcione de manera autónoma sin dependencias externas.
+
+## Tests
+
+El proyecto incluye tests automatizados utilizando Playwright para verificar la funcionalidad principal de la aplicación. Los tests están ubicados en el directorio `tests/` y cubren los siguientes escenarios:
+
+### Tests de Búsqueda
+
+- **search-results.spec.ts**: Verifica que al buscar "café" se muestren exactamente 5 resultados en la lista de comercios.
+
+### Tests de Interacción con el Mapa
+
+- **map-interaction.spec.ts**: Verifica la interacción con los marcadores de Google Maps y la visualización de la ventana de información al hacer clic en un marcador. Este test busca "Café Wonderful", hace clic en un marcador del mapa y verifica que se muestre la ventana de información con los detalles del comercio.
+
+### Ejecución de Tests
+
+Para ejecutar los tests, utiliza los siguientes comandos:
+
+```bash
+# Ejecutar todos los tests
+pnpm test
+
+# Ejecutar tests en modo visual (con navegador visible)
+pnpm test:headed
+
+# Ver el reporte de los tests
+pnpm show:report
+```
+
+Para ejecutar un test específico:
+
+```bash
+pnpm test:search-results
+pnpm test:map-interaction
+```
+
+## Demostración
+
+![Demo de la aplicación](./docs/assets/demo.gif)
