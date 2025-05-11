@@ -17,7 +17,7 @@ function App() {
                   {businesses?.length === 0 ? (
                       <p className="text-center mt-4 text-gray-500">No se encontraron resultados</p>
                   ) : (
-                      <div className="overflow-y-auto mt-4 max-h-[calc(100vh-180px)] w-full">
+                      <div id="businesses-list" className="overflow-y-auto mt-4 max-h-[calc(100vh-180px)] w-full">
                           {query && (
                               <h2 className="text-center text-lg font-bold mb-4">Resultados {businesses?.length} para {query}</h2>
                           )}

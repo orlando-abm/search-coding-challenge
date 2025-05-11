@@ -13,7 +13,7 @@ export const BusinessCard = ({ business }: { business: Business }) => {
   
   return (
       <article 
-        className={'grid grid-cols-5 gap-2 p-4 border rounded-md mb-4 cursor-pointer transition-all ' + (selectedBusiness?.id === business.id ? 'border-blue-600' : 'border-gray-200')}
+        className={'business-card grid grid-cols-5 gap-2 p-4 border rounded-md mb-4 cursor-pointer transition-all ' + (selectedBusiness?.id === business.id ? 'border-blue-600' : 'border-gray-200')}
         onClick={handleCardClick}
       >
           <img className="col-span-2 w-full h-48 object-cover rounded-lg" src={business.image} alt={business.name}/>

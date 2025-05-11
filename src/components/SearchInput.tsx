@@ -51,6 +51,7 @@ export const SearchInput = ({
           <div className="flex items-center flex-1 gap-2 px-2 py-2 min-w-0">
               <Search size={16} className="shrink-0" color={query ? 'black' : 'gray'}/>
               <input
+                id="search-input"
                 className="flex-1 border-none outline-none min-w-0 w-full"
                 type="text"
                 placeholder={placeholder}
@@ -68,6 +69,7 @@ export const SearchInput = ({
               ) : null }
           </div>
           <button 
+            id="search-button"
             className="cursor-pointer bg-blue-600 text-white px-3 md:px-4 flex items-center justify-center self-stretch shrink-0"
             onClick={handleSubmit}
             aria-label="Buscar"

@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:search-results": "playwright test tests/search-results.spec.ts",
+    "test:map-interaction": "playwright test tests/map-interaction.spec.ts",
+    "show:report": "pnpm playwright show-report"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
@@ -20,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.17",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
