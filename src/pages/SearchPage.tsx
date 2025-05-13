@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useBusinessSearch } from '@Shared/hooks';
 import { SelectedBusinessProvider } from '@Shared/context';
-import { SearchInput, BusinessCard, Map } from '@Components';
+import { SearchInput, BusinessCard, Map, BusinessCardSkeleton } from '@Components';
 
 function SearchPage() {
   const [query, setQuery] = useState('');
-  const { data: businesses } = useBusinessSearch(query);
+  const { data: businesses, isLoading } = useBusinessSearch(query);
 
   return (
       <SelectedBusinessProvider>
@@ -14,7 +14,14 @@ function SearchPage() {
                   <h1 className="text-2xl font-bold mb-6 text-center">Buscar Comercios</h1>
                   <SearchInput onSearch={setQuery} />
 
-                  {businesses?.length === 0 ? (
+                  {isLoading ? (
+                      <div className="overflow-y-auto mt-4 max-h-[calc(100vh-180px)] w-full">
+                          <h2 className="text-center text-lg font-bold mb-4">Buscando...</h2>
+                          {Array(3).fill(0).map((_, index) => (
+                              <BusinessCardSkeleton key={index} />
+                          ))}
+                      </div>
+                  ) : businesses?.length === 0 ? (
                       <p className="text-center mt-4 text-gray-500">No se encontraron resultados</p>
                   ) : (
                       <div id="businesses-list" className="overflow-y-auto mt-4 max-h-[calc(100vh-180px)] w-full">
