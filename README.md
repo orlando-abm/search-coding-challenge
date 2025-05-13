@@ -271,4 +271,4 @@ pnpm test:map-interaction
 
 ## Demostración
 
-<img src="./docs/assets/demo.gif" alt="Demostración de la aplicación de búsqueda de negocios mostrando la interfaz, búsqueda de comercios y la interacción con el mapa" width="800">
+<img src="./docs/assets/demo.gif" alt="Demostración de la aplicación de búsqueda de negocios mostrando la interfaz, búsqueda de comercios y la interacción con el mapa" width="410">
