@@ -18,10 +18,11 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve('./src'),
-        '@mocks': path.resolve('./src/mocks'),
-        '@config': path.resolve('./src/config'),
-        '@shared': path.resolve('./src/shared'),
-        '@components': path.resolve('./src/components')
+        '@Mocks': path.resolve('./src/mocks'),
+        '@Config': path.resolve('./src/config'),
+        '@Shared': path.resolve('./src/shared'),
+        '@Components': path.resolve('./src/components'),
+        '@Pages': path.resolve('./src/pages')
       }
     }
   };

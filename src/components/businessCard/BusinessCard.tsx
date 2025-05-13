@@ -1,7 +1,7 @@
-import type { Business } from '@/mocks/interfaces';
+import type { Business } from '@Mocks/interfaces';
 import { MapPin, Clock, Tag } from 'lucide-react';
-import { InfoRow } from '@/components';
-import { useSelectedBusiness } from '@/shared/context';
+import { InfoRow } from '@Components';
+import { useSelectedBusiness } from '@Shared/context';
 import { useCallback } from 'react';
 
 export const BusinessCard = ({ business }: { business: Business }) => {

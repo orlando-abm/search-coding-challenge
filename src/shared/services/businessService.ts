@@ -1,16 +1,15 @@
-import { API_ENDPOINTS } from '@/shared/constants/api';
-import { fetchApi } from '@/config';
-import type { Business } from '@/mocks/interfaces';
+import { API_ENDPOINTS } from '@Shared/constants';
+import { api } from '@Config/api';
+import type { Business } from '@Mocks/interfaces';
 
 export async function getAllBusinesses(): Promise<Business[]> {
-  return fetchApi<Business[]>(API_ENDPOINTS.BUSINESSES.ALL);
+  return api.get<Business[]>(API_ENDPOINTS.BUSINESSES.ALL);
 }
 
 export async function getBusinessById(id: string): Promise<Business> {
-  return fetchApi<Business>(API_ENDPOINTS.BUSINESSES.BY_ID(id));
+  return api.get<Business>(API_ENDPOINTS.BUSINESSES.BY_ID(id));
 }
 
 export async function searchBusinesses(query: string): Promise<Business[]> {
-  const endpoint = `${API_ENDPOINTS.BUSINESSES.ALL}?query=${encodeURIComponent(query)}`;
-  return fetchApi<Business[]>(endpoint);
+  return api.get<Business[]>(API_ENDPOINTS.BUSINESSES.ALL, { query });
 }

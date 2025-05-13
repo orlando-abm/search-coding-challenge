@@ -86,6 +86,8 @@ src/
 │   ├── data/          # Datos mock para simular respuestas de API
 │   ├── handlers/      # Manejadores de peticiones HTTP mock
 │   └── interfaces/    # Interfaces TypeScript para los datos mock
+├── pages/             # Páginas de la aplicación (componentes de nivel superior que representan rutas completas)
+│   └── SearchPage.tsx # Página principal de búsqueda con mapa y listado de comercios
 └── shared/            # Código compartido entre diferentes partes de la aplicación
     ├── constants/     # Constantes utilizadas en toda la aplicación
     ├── context/       # Contextos de React para estado global
@@ -105,6 +107,8 @@ Esta arquitectura permite:
 - **Context API**: Para gestionar el estado global de la aplicación, como el negocio seleccionado.
 - **Custom Hooks**: Para encapsular lógica reutilizable, como la búsqueda de negocios.
 - **Mocks**: Para simular una API durante el desarrollo, permitiendo trabajar sin dependencias externas.
+- **Arquitectura basada en páginas**: Separación de la aplicación en componentes de nivel superior (páginas) que representan rutas completas, mejorando la organización y mantenibilidad del código.
+- **Cliente HTTP centralizado**: Utilización de Axios con una configuración centralizada que incluye interceptores para manejo de errores y métodos específicos para diferentes tipos de peticiones HTTP.
 
 ## Tecnologías Utilizadas
 
@@ -118,6 +122,7 @@ Esta arquitectura permite:
 - Lucide React
 - ESLint
 - Playwright
+- Axios
 
 
 ## Requisitos Previos
@@ -266,4 +271,4 @@ pnpm test:map-interaction
 
 ## Demostración
 
-![Demo de la aplicación](./docs/assets/demo.gif)
+<img src="./docs/assets/demo.gif" alt="Demostración de la aplicación de búsqueda de negocios mostrando la interfaz, búsqueda de comercios y la interacción con el mapa" width="410">

@@ -1,4 +1,4 @@
-import { businessHandlers } from '@mocks/handlers/businessHandlers';
+import { businessHandlers } from '@Mocks/handlers/businessHandlers';
 
 export const handlers = [
   ...businessHandlers
