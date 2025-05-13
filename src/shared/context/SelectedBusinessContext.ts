@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type { Business } from '@/mocks/interfaces/business.interface';
+import type { Business } from '@Mocks/interfaces';
 
 export interface SelectedBusinessContextType {
   selectedBusiness: Business | null;

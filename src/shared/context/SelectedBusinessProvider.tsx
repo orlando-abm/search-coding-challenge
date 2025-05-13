@@ -1,6 +1,6 @@
 import { useState, useCallback, type ReactNode } from 'react';
-import { SelectedBusinessContext } from '@/shared/context';
-import type { Business } from '@/mocks/interfaces/business.interface';
+import { SelectedBusinessContext } from '@Shared/context';
+import type { Business } from '@Mocks/interfaces';
 
 export const SelectedBusinessProvider = ({ children }: { children: ReactNode }) => {
   const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null);

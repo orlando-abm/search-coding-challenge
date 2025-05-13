@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import type { Business } from '@/mocks/interfaces/business.interface';
-import { InfoWindowDetails } from '@/components/InfoWindowDetails';
-import { containerStyle } from '@/shared/constants/map';
-import { useSelectedBusiness } from '@/shared/context';
+import type { Business } from '@Mocks/interfaces';
+import { InfoWindowDetails } from '@Components/InfoWindowDetails';
+import { containerStyle } from '@Shared/constants/map';
+import { useSelectedBusiness } from '@Shared/context';
 
 interface MapProps {
   businesses?: Business[];

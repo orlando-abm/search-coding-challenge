@@ -1,4 +1,4 @@
-import type { Business } from '@/mocks/interfaces';
+import type { Business } from '@Mocks/interfaces';
 
 export const InfoWindowDetails = ({ business }: { business: Business }) => {
   return (

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { SelectedBusinessContext } from '@/shared/context';
+import { SelectedBusinessContext } from '@Shared/context';
 
 export const useSelectedBusiness = () => {
   const context = useContext(SelectedBusinessContext);

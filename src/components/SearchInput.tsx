@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { Search, X } from 'lucide-react';
-import { useSelectedBusiness } from '@/shared/context';
+import { useSelectedBusiness } from '@Shared/context';
 
 interface SearchInputProps {
   onSearch: (query: string) => void;

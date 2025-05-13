@@ -1,4 +1,4 @@
-import { SearchPage } from '@/pages';
+import { SearchPage } from '@Pages';
 
 function App() {
   return (

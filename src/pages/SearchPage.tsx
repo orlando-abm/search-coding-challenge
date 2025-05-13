@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useBusinessSearch } from '@/shared/hooks';
-import { SelectedBusinessProvider } from '@/shared/context';
-import { SearchInput, BusinessCard, Map } from '@/components';
+import { useBusinessSearch } from '@Shared/hooks';
+import { SelectedBusinessProvider } from '@Shared/context';
+import { SearchInput, BusinessCard, Map } from '@Components';
 
 function SearchPage() {
   const [query, setQuery] = useState('');
