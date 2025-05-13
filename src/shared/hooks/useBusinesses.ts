@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { getAllBusinesses, searchBusinesses, getBusinessById } from '@Shared/services';
-import { QUERY_KEYS } from '@Shared/constants/queryKeys';
+import { QUERY_KEYS } from '@Shared/constants';
 
 export function useAllBusinesses() {
   return useQuery({

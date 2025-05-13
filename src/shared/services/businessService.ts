@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from '@Shared/constants/api';
+import { API_ENDPOINTS } from '@Shared/constants';
 import { api } from '@Config/api';
 import type { Business } from '@Mocks/interfaces';
 

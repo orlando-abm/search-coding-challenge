@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw';
 import { businesses } from '@Mocks/data/businesses'; 
-import { API_ENDPOINTS } from '@Shared/constants/api';
+import { API_ENDPOINTS } from '@Shared/constants';
 
 export const businessHandlers = [
   http.get(API_ENDPOINTS.BUSINESSES.ALL, ({ request }) => {

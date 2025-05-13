@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import type { Business } from '@Mocks/interfaces';
 import { InfoWindowDetails } from '@Components/InfoWindowDetails';
-import { containerStyle } from '@Shared/constants/map';
+import { containerStyle } from '@Shared/constants';
 import { useSelectedBusiness } from '@Shared/context';
 
 interface MapProps {
